@@ -1,0 +1,307 @@
+/* style.css - Colorful Pink Movie Recommender Styles */
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ff6b81;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #ff6b81;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.instructions {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Selection Area */
+.selection-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+select {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 2px solid #ff9a9e;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 129, 0.2);
+}
+
+select:focus {
+    outline: none;
+    border-color: #ff6b81;
+    box-shadow: 0 5px 20px rgba(255, 107, 129, 0.3);
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: linear-gradient(to right, #ff6b81, #ff9a9e);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 129, 0.5);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Result Box */
+.result-box {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 20px;
+    min-height: 200px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+#result {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Movie Grid */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.movie-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 107, 129, 0.2);
+    border-top: 5px solid #ff6b81;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(255, 107, 129, 0.3);
+}
+
+.movie-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ff6b81;
+}
+
+.movie-genres {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.similarity {
+    display: block;
+    margin-top: 10px;
+    padding: 8px;
+    background: linear-gradient(to right, #ff6b81, #ff9a9e);
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(255, 107, 129, 0.3);
+}
+
+/* Loading Animation */
+.loading {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 30px 0;
+    color: #ff6b81;
+}
+
+.spinner {
+    border: 5px solid rgba(255, 107, 129, 0.2);
+    border-radius: 50%;
+    border-top: 5px solid #ff6b81;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    
+    select {
+        font-size: 1rem;
+        padding: 12px;
+    }
+    
+    button {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .instructions {
+        font-size: 1rem;
+    }
+    
+    .movie-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .movie-card {
+        padding: 15px;
+    }
+    
+    .movie-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fad0c4;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff6b81;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff4757;
+}
+
+/* Focus States for Accessibility */
+select:focus,
+button:focus {
+    outline: 2px solid #ff6b81;
+    outline-offset: 2px;
+}
+
+/* Animation for results */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.movie-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Hover effects for interactive elements */
+select:hover {
+    border-color: #ff6b81;
+}
+
+/* Additional decorative elements */
+.container::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 10px;
+    background: #ff6b81;
+    border-radius: 0 0 5px 5px;
+}
+
+header::after {
+    content: "🎬";
+    font-size: 2rem;
+    display: block;
+    margin-top: 10px;
+}
